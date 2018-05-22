@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Zadanie - Radosław Wojaczek</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Straż pożarna</h1>
+
+    <form class="new" method="post">
+        <fieldset>
+        <legend>Uzupełnij</legend>
+            <fieldset>
+                <legend>Dodaj nowe miasto</legend>
+                <div id="formCity">
+                    <p>Nazwa miasta:</p>
+                    <input type="text" id="nazwa" name="nazwa" placeholder="Nazwa miasta">
+                    <p>Czy miasto posiada jednostkę straży pożarnej?</p>
+                    <select name="jednostka">
+                        <option value="tak">tak</option>
+                        <option value="nie">nie</option>
+                    </select>
+                    <input type="button" value="Zatwierdź miasto" class="sCity" onclick=submitCity()>
+                    <div id="dynamicInputCity"></div>
+                    <br>
+                    <input type="button" value="Dodaj kolejne miasto" onclick="addInputCity('dynamicInputCity');" />
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Dodaj nową drogę</legend>
+                <div id="formRoad">
+                    <p>Wybierz dwa miasta z listy dostępnych miast, w celu utworzenia nowej drogi</p>
+                    <select multiple="true" id="hehe" class="road" name="miasta">
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                        <option value="4">Four</option>
+                        <!-- TODO: sprawdzić czy miasta się powtarzają, oraz czy nie został już wpisany-->
+                    </select>
+                    <p>Podaj czas przejazdu:</p>
+                    <input name="czas_przejazdu" type="number" value="1" min="1" placeholder="minimum 1" step="1">
+                        <div id="dynamicInputRoad"></div>
+                    <br>
+                    <input type="button" value="Dodaj kolejną drogę" onclick="addInputRoad('dynamicInputRoad');" />
+                    <input type="submit" value="Zatwierdź drogi">
+                </div>
+            </fieldset>
+                <input type="submit" value="Utwórz obiekt">
+        </fieldset>
+    </form>
+
+    <div class="results">
+        <h2 class="results__heading">Form Data</h2>
+        <pre class="results__display">
+        </pre>
+    </div>
+
+</body>
+<script src="script.js"></script>
+
+</html>

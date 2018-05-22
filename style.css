@@ -1,0 +1,19 @@
+body {
+  background-color: wheat; }
+
+.results__heading {
+  font-size: 110%; }
+
+.results__display-wrapper {
+  margin-top: 16px;
+  margin-top: 1rem;
+  padding: 8px 16px;
+  padding: 0.5rem 1rem;
+  background: #f9fdfe;
+  border: 1px solid #cdcfcf;
+  overflow-x: scroll; }
+
+  input[type="button"]:active{
+    background-color: springgreen;
+}
+
